@@ -1,0 +1,4 @@
+# Ignore the .env file to prevent sensitive information from being committed to Git
+.env
+# Ignore the node_modules directory to prevent large files from being committed to Git
+node_modules/
