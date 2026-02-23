@@ -6,7 +6,8 @@ export const createUser = async (req,res) => {
         const {name,email,country} = req.body
         const newUser = new User({name,email,country})
         await newUser.save()
-        res.status(201).json(newUser)
+        // res.status(201).json(newUser)
+        res.status(201).json({message:"User created successfully"})
     } catch (error) {
         res.status(500).json({message:"Error creating user",error})
     }
