@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import toast from 'react-hot-toast'
 
 function UserTable() {
 
@@ -20,7 +21,20 @@ function UserTable() {
   },[])
 
 
-
+const deleteUser=async(id)=>{
+  try {
+    const response=await axios.delete(`https://solid-guide-5w77vvg556637jg9-5000.app.github.dev/api/users/${id}`).then(
+      (response)=>{
+      
+        setUsers(users.filter((user)=>user._id!==id))
+        toast.success(response.data.message,{position:"top-right"})
+      }
+    )
+    
+  } catch (error) {
+    console.log("Error deleting user",error.message)
+  }
+}
 
 
 
@@ -76,7 +90,8 @@ function UserTable() {
                 </td>
                 <td className="px-6 py-4 flex gap-4">
                   <Link to={`/update/${user._id}`} className="text-blue-600 font-semibold hover:underline">Edit</Link>
-                  <Link to="/" className="text-red-600 font-semibold hover:underline">Delete</Link>
+
+                  <Link to="/" className="text-red-600 font-semibold hover:underline" onClick={()=>deleteUser(user._id)}>Delete</Link>
                 </td>
               </tr>
                   )
