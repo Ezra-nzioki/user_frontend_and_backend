@@ -75,7 +75,7 @@ const deleteUser=async(id)=>{
                users.map(
                 (user,index)=>{
                   return(
-                    <tr className="bg-gradient-to-r from-red-500 to-orange-500border-b">
+                    <tr className="bg-gradient-to-r from-red-500 to-orange-500 border-b">
                   <th scope="row" className="px-6 py-4 font-medium text-gray-800 whitespace-nowrap">
                   {index+1}
                 </th>
