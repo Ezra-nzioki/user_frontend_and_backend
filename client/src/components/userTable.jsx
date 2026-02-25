@@ -10,7 +10,7 @@ function UserTable() {
   useEffect(()=>{
    const fetchData=async()=>{
     try {
-      const response=await axios.get('https://solid-guide-5w77vvg556637jg9-5000.app.github.dev/api/users')
+      const response=await axios.get('https://user-backend-wktw.onrender.com/api/users')
       setUsers(response.data)
     } catch (error) {
       console.log("Error fetching users",error.message)
