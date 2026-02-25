@@ -7,7 +7,7 @@ import Update from './components/update.jsx'
 function App() {
  
   return (
-    <div className='bg-gradient-to-r from-indigo-500 to-teal-400'>
+    <div className='bg-teal-400 min-h-screen'>
         <Routes>
           <Route path='/' element={<UserTable />} />
           <Route path='/add' element={<AddUser />} />
