@@ -37,7 +37,10 @@ const addData=async(e)=>{
       </div>
 
       <div className="max-w-md mx-auto p-4 bg-white shadow-md rounded-lg">
-        <form className="space-y-4" onSubmit={addData}>
+        <form className="space-y-4 bg-gradient-to-r
+from-[#134E8E]
+via-[#FFB33F]
+to-[#237227]  text-white" onSubmit={addData}>
           <div className="flex flex-col md:flex-row gap-4">
             <input type="text" placeholder="Name" className="w-full p-2 border rounded" 
             onChange={
