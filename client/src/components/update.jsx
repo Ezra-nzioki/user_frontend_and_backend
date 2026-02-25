@@ -14,7 +14,7 @@ const [user, setUser] = useState(users)
 const navigate=useNavigate()
 const {id}=useParams()
 useEffect(()=>{
-  axios.get(`https://solid-guide-5w77vvg556637jg9-5000.app.github.dev/api/users/${id}`).then(
+  axios.get(`https://user-backend-wktw.onrender.com/api/users/${id}`).then(
     (response)=>{
       setUser(response.data)
     }
