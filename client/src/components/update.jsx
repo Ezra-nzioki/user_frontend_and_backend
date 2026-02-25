@@ -29,7 +29,7 @@ const addData=async(e)=>{
   e.preventDefault()
 
   try {
-    const response=await axios.put(`https://solid-guide-5w77vvg556637jg9-5000.app.github.dev/api/users/${id}`,user).then(
+    const response=await axios.put(`https://user-backend-wktw.onrender.com/api/users/${id}`,user).then(
       (response)=>{
         toast.success(response.data.message,{position:"top-right"})
         navigate('/')
