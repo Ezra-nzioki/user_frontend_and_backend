@@ -23,7 +23,7 @@ function UserTable() {
 
 const deleteUser=async(id)=>{
   try {
-    const response=await axios.delete(`https://solid-guide-5w77vvg556637jg9-5000.app.github.dev/api/users/${id}`).then(
+    const response=await axios.delete(`https://user-backend-wktw.onrender.com/api/users/${id}`).then(
       (response)=>{
       
         setUsers(users.filter((user)=>user._id!==id))
