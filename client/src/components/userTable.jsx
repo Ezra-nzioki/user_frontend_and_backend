@@ -41,16 +41,16 @@ const deleteUser=async(id)=>{
 
 
   return (
-    <>
+    <div className="bg-gradient-to-r from-indigo-500 to-teal-400">
             <div className='my-5 mx-2'>
               <Link to="/add" className="text-white font-bold py-2 px-4 rounded bg-green-500 hover:bg-green-700">
                 Add User
               </Link>
             </div>
-          <table className="w-full text-sm bg-green-800">
+          <table className="w-full text-sm">
             
 
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+            <thead className="text-xs text-gray-700 uppercase bg-gradient-to-r from-indigo-500 to-teal-400">
               <tr>
                 <th scope="col" className="px-6 py-3">
                   SN
@@ -69,23 +69,24 @@ const deleteUser=async(id)=>{
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody> 
              {
-              users.map(
+              users && users.length > 0 ? (
+               users.map(
                 (user,index)=>{
                   return(
-                    <tr className="bg-white border-b">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <tr className="bg-gradient-to-r from-red-500 to-orange-500border-b">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-800 whitespace-nowrap">
                   {index+1}
                 </th>
                 
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                <th scope="row" className="px-6 py-4 font-medium text-gray-800 whitespace-nowrap">
                   {user.name}
                 </th>
-                <td className="px-6 py-4">
+                <td className="px-6 py-4 text-gray-800 font-semibold">
                   {user.email}
                 </td>
-                <td className="px-6 py-4">
+                <td className="px-6 py-4 text-gray-800 font-semibold">
                   {user.country}
                 </td>
                 <td className="px-6 py-4 flex gap-4">
@@ -98,11 +99,18 @@ const deleteUser=async(id)=>{
 
                 }
               )
+              ) : (
+                <tr className="bg-gradient-to-r from-green-900 to-orange-700 border-b">
+                  <td colSpan={5} className="px-6 py-4 text-center text-lg text-gray-900">
+                    No users found.
+                  </td>
+                </tr>
+              )
              }
               
             </tbody>
           </table>
-    </>
+    </div>
   )
 }
 
